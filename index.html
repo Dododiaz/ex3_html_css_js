@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      body {
+        background-color: hsl(234, 29%, 20%);
+      }
+      .main {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .card {
+        background-color: white;
+        /* width: 950px; */
+        border-radius: 30px;
+      }
+      .card-element {
+        display: flex;
+        flex-direction: row-reverse;
+        padding: 30px;
+        max-width: 922px;
+      }
+      .card-message {
+        margin: 20px;
+      }
+      h1 {
+        font-size: 55px;
+        font-family: sans-serif;
+      }
+      p {
+        padding: 0;
+        font-size: 20px;
+      }
+      .success {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .email {
+        width: 22.5em; /* Largeur du bouton */
+        height: 45px;
+        font-size: 18px;
+        padding-left: 15px;
+        border-radius: 10px;
+        border-color: rgb(206, 218, 218);
+      }
+      .submit {
+        font-size: 18px;
+        padding: 15px 52px;
+        margin-top: 15px;
+        background-color: hsl(234, 29%, 20%);
+        color: rgb(252, 251, 249);
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 800;
+        border-radius: 10px;
+      }
+      .email-submit nav .lib-email {
+        margin-bottom: 15px;
+        color: black;
+        font-weight: 900;
+      }
+
+      .parag {
+        padding: 0;
+        margin-bottom: 10px;
+        margin-top: 10px;
+      }
+      .para {
+        width: 450px;
+      }
+      .img-mobile {
+        display: none;
+      }
+      .img-desktop {
+        display: block;
+      }
+      .email-submit nav {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 56px;
+      }
+      .email-submit nav p {
+        font-size: 16px;
+        color: #ff1d1d;
+      }
+      .v-required {
+        display: none;
+      }
+      .invalid-email {
+        background-color: #eeb5b5;
+        color: #ff1d1d;
+        border: none;
+      }
+      .Subscribe {
+        width: 430px;
+        padding: 20px;
+      }
+      .Subscribe input {
+        font-size: 18px;
+        padding: 15px 120px;
+        margin-top: 15px;
+        background-color: hsl(234, 29%, 20%);
+        color: rgb(252, 251, 249);
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 800;
+        border-radius: 10px;
+        border: none;
+      }
+      .Subscribe input:hover {
+        cursor: pointer;
+        border: none;
+        background: linear-gradient(
+          49deg,
+          rgba(255, 2, 150, 1) 0%,
+          rgba(255, 146, 0, 1) 100%
+        );
+      }
+      .remv-subs {
+        display: none;
+      }
+      .card-check {
+        display: none;
+      }
+      @media screen and (width < 430px) {
+        .card-element {
+          flex-direction: column;
+          padding: 0;
+         height: 100vh;
+         width: 100vw;
+        }
+        .img-mobile {
+          display: block;
+        }
+        .img-desktop {
+          display: none;
+        }
+        .card-message {
+          margin: 0;
+          padding-left: 20px;
+          padding-bottom: 40px;
+        }
+        .card {
+          /* width: 950px; */
+          border-radius: 0;
+        }
+        h1 {
+          margin: 15px 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sign-up form start -->
+    <div class="main">
+      <div class="card">
+        <div class="card-element">
+          <div id="subs" class="Subscribe  remv-subs">
+            <img src="assets/images/icon-success.svg" alt="" />
+            <h1>Thanks for subscribing!</h1>
+            <p>
+              A confirmation email has been sent to
+              <b id="check-email"> ash@loremcompany.com</b>. Please open it and
+              click the button inside to confirm your subscription.
+            </p>
+            <input
+              class="submit-subscrib"
+              type="submit"
+              value="Dismiss message"
+            />
+          </div>
+          <div id="card-check" class="card-element ">
+            <img
+              src="assets/images/illustration-sign-up-mobile.svg"
+              class="img-mobile"
+              alt=""
+            />
+            <img
+              src="./assets/images/illustration-sign-up-desktop.svg"
+              class="img-desktop"
+              alt=""
+            />
+            <div class="card-message">
+              <h1>Stay updated!</h1>
+              <p class="para">
+                Join 60,000+ product managers receiving monthly updates on:
+              </p>
+              <div class="success">
+                <img
+                  src="./assets/images/icon-success.svg"
+                  width="25px"
+                  height="25px"
+                />
+                <p class="parag">Product discovery and building what matters</p>
+              </div>
+              <div class="success">
+                <img
+                  src="./assets/images/icon-success.svg"
+                  width="25px"
+                  height="25px"
+                />
+                <p class="parag">Measuring to ensure updates are a success</p>
+              </div>
+              <div class="success">
+                <img
+                  src="./assets/images/icon-success.svg"
+                  width="25px"
+                  height="25px"
+                />
+                <p class="parag">And much more!</p>
+              </div>
+              <div class="email-submit">
+                <nav>
+                  <p class="lib-email">Email address</p>
+                  <p id="inv-required" class="v-required">
+                    valid email required
+                  </p>
+                </nav>
+                <input
+                  type="email"
+                  id="email"
+                  class="email"
+                  name="email"
+                  placeholder="email@exemple.com"
+                />
+                <input
+                  class="submit"
+                  type="submit"
+                  value="Subscribe to monthly newsletter"
+                  onclick="verifierEmail()"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function verifierEmail() {
+        var emailInput = document.getElementById("email");
+        var invrequired = document.getElementById("inv-required");
+        var checkemail = document.getElementById("check-email");
+        var cardcheck = document.getElementById("card-check");
+        var subdiv = document.getElementById("subs");
+        var email = emailInput.value;
+        var regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,4}$/;
+        if (!regex.test(email)) {
+          invrequired.classList.remove("v-required");
+          emailInput.classList.add("invalid-email");
+        
+          // Vous pouvez remplacer alert par une autre méthode d'affichage, ou ajouter du code pour empêcher la soumission du formulaire
+        } else {
+          invrequired.classList.add("v-required");
+          emailInput.classList.remove("invalid-email");
+        
+          subdiv.classList.remove("remv-subs");
+          cardcheck.classList.add("remv-subs");
+     
+          checkemail.innerHTML = email;
+        }
+      }
+    </script>
+  </body>
+</html>
